@@ -1,25 +1,25 @@
 <template>
-  <div class="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-6">
-    <div v-if="!authenticated" class="bg-white p-8 rounded-xl shadow-lg w-full max-w-md">
+  <div class="min-h-[] bg-gray-100 flex flex-col items-center justify-center p-6">
+    <div v-if="!authenticated" class="bg-white p-8 rounded-xl shadow-lg w-full max-w-lg">
       <h2 class="text-2xl font-bold text-center mb-6">Login</h2>
-      <form @submit.prevent="login" class="flex flex-col gap-4">
+      <form @submit.prevent="login" class="text-xl w-full max-w-md mx-auto">
         <input
           v-model="email"
           type="email"
           placeholder="Email"
           required
-          class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-        />
+          class="w-full border border-gray-300 rounded-md px-4 py-4 text-lg focus:outline-none focus:ring-2 focus:ring-blue-400 mb-10"
+        /><br/>
         <input
           v-model="password"
           type="password"
           placeholder="Password"
           required
-          class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-        />
+          class="w-full border border-gray-300 rounded-md px-4 py-4 text-lg focus:outline-none focus:ring-2 focus:ring-blue-400 mb-10"
+        /><br/>
         <button
           type="submit"
-          class="bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition"
+          class="bg-blue-500 text-white py-3 rounded-md hover:bg-blue-600 transition text-xl w-full mb-4"
         >
           Login
         </button>
@@ -30,26 +30,67 @@
     <div v-else class="bg-white p-8 rounded-xl shadow-lg w-full max-w-xl mt-4">
       <h2 class="text-2xl font-bold text-center mb-6">Patient Record</h2>
       <div v-if="patient" class="space-y-4">
+        <h3 class="text-xl font-bold text-blue-700 border-b pb-2 mb-4">📞 Contact Information</h3>
         <div>
-          <h3 class="text-lg font-semibold">Name:</h3>
-          <p>{{ patient.name }}</p>
+        <h3 class="text-lg font-semibold">Name:</h3>
+        <p>{{ patient.name }}</p>
+        <div>
+        <h3 class="text-lg font-semibold">Gender:</h3>
+        <p>{{ patient.gender }}</p>
         </div>
         <div>
-          <h3 class="text-lg font-semibold">Medical History:</h3>
-          <p>{{ patient.medical_history }}</p>
+          <h3 class="text-lg font-semibold">Date of Birth:</h3>
+          <p>{{ patient.date_of_birth }}</p>
         </div>
         <div>
-          <h3 class="text-lg font-semibold">Medications:</h3>
-          <p>{{ patient.medications }}</p>
+          <h3 class="text-lg font-semibold">Phone Number:</h3>
+          <p>{{ patient.phone_number }}</p>
         </div>
         <div>
-          <h3 class="text-lg font-semibold">Allergies:</h3>
-          <p>{{ patient.allergies }}</p>
+          <h3 class="text-lg font-semibold">Address:</h3>
+          <p>{{ patient.address }}</p>
         </div>
         <div>
-          <h3 class="text-lg font-semibold">Emergency Contact:</h3>
-          <p>{{ patient.emergency_contact }}</p>
+          <h3 class="text-lg font-semibold">Marital Status:</h3>
+          <p>{{ patient.marital_status }}</p>
         </div>
+      </div>
+      <h3 class="text-xl font-bold text-blue-700 border-b pb-2 mb-4">🌍 Background</h3>
+      <div>
+        <h3 class="text-lg font-semibold">Ethnicity:</h3>
+        <p>{{ patient.ethnicity }}</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold">Language:</h3>
+        <p>{{ patient.language }}</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold">Email:</h3>
+        <p>{{ patient.email }}</p>
+      </div>
+      <h3 class="text-xl font-bold text-blue-700 border-b pb-2 mb-4">🩺 Medical Information</h3>
+      <div>
+        <h3 class="text-lg font-semibold">Blood Type:</h3>
+        <p>{{ patient.blood_type }}</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold">Medical History:</h3>
+        <p>{{ patient.medical_history }}</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold">Medications:</h3>
+        <p>{{ patient.medications }}</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold">Allergies:</h3>
+        <p>{{ patient.allergies }}</p>
+      </div>
+      <h3 class="text-xl font-bold text-blue-700 border-b pb-2 mb-4">🚨 Emergency Contact</h3>
+      <div>
+        <h3 class="text-lg font-semibold">Emergency Contact:</h3>
+        <p>{{ patient.emergency_contact }}</p>
+      </div>
+
 
         <hr class="my-4" />
         <div>
